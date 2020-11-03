@@ -6,7 +6,7 @@ public class Drive : MonoBehaviour
 {
     private float driveSpeed;
     public float driveScriptSpeed;
-    private float rotateSpeed = 10.0f;
+    private float rotateSpeed = 100.0f;
     public float driveScriptRotate;
     private float acceleration = 100.0f;
     private float brake = 100.0f;
@@ -27,10 +27,7 @@ public class Drive : MonoBehaviour
       }
       else 
       {
-         while(driveSpeed != 0)
-         {  
              driveSpeed -= brake * Time.deltaTime;
-         }
       }
       driveSpeed = Mathf.Clamp(driveSpeed, -maxSpeed, maxSpeed); 
       Vector3 velocity = Vector3.forward * driveSpeed;
@@ -47,6 +44,7 @@ public class Drive : MonoBehaviour
       }
       transform.Rotate (0, turn*rotateSpeed*Time.deltaTime, 0);
       driveScriptRotate = rotateSpeed;
+      Debug.Break();
     } 
 }
 
