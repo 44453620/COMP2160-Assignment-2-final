@@ -1,0 +1,9 @@
+
+GAME/Assets/Scenes/SampleScene.unity.meta
+*.graph
+GAME/Library/
+GAME/Assets/Scenes.meta
+GAME/Packages/manifest.json
+GAME/Packages/packages-lock.json
+GAME/ProjectSettings/
+GAME/Temp/UnityLockfile
