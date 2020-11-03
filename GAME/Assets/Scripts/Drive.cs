@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Drive : MonoBehaviour
 {
-    private float driveSpeed;
+    private float driveSpeed = 0.0f;
     public float driveScriptSpeed;
     private float rotateSpeed = 100.0f;
     public float driveScriptRotate;
@@ -16,42 +16,55 @@ public class Drive : MonoBehaviour
 
     void Update()
     {
-       forward = Input.GetAxis("Vertical");
-      if (forward > 0) 
+      if(transform.position.y < 2)
       {
-        driveSpeed += acceleration * Time.deltaTime;
-      }
-      else if (forward < 0) 
-      {
-        driveSpeed -= acceleration * Time.deltaTime;
-      }
-      else 
-      {
-        if(!(Input.GetKeyDown("Vertical")))
+        forward = Input.GetAxis("Vertical");
+        if (forward > 0) 
         {
-             driveSpeed -= brake * Time.deltaTime;
+         driveSpeed += acceleration * Time.deltaTime;
         }
-      }
-      driveSpeed = Mathf.Clamp(driveSpeed, -maxSpeed, maxSpeed); 
-      Vector3 velocity = Vector3.forward * driveSpeed;
-      transform.Translate(velocity * Time.deltaTime);  
-      driveScriptSpeed = driveSpeed;
+        else if (forward < 0) 
+        {
+         driveSpeed -= acceleration * Time.deltaTime;
+        }
+        else 
+        {
+          if(driveSpeed > 0)
+          {
+             driveSpeed -= brake * Time.deltaTime;
+             driveSpeed = Mathf.Clamp(driveSpeed, 0, maxSpeed);
+          }
+          else if (driveSpeed < 0)
+          {
+            driveSpeed += brake * Time.deltaTime;
+            driveSpeed = Mathf.Clamp(driveSpeed, -maxSpeed, 0);
+          }
+          else
+          {
+            driveSpeed = 0;
+          }
+        }
+        driveSpeed = Mathf.Clamp(driveSpeed, -maxSpeed, maxSpeed); 
+        Vector3 velocity = Vector3.forward * driveSpeed;
+        transform.Translate(velocity * Time.deltaTime);  
+        driveScriptSpeed = driveSpeed;
 
-      if(forward != 0)
-      {
+        if(forward != 0)
+        {
           turn = Input.GetAxis("Horizontal");
           if(forward < 0)
           {
             turn *= -1;
           }
-      }
-      else
-      {
+        }
+        else
+        {
           turn = 0;
+        }
+        transform.Rotate (0, turn*rotateSpeed*Time.deltaTime, 0);
+        driveScriptRotate = rotateSpeed;
       }
-      transform.Rotate (0, turn*rotateSpeed*Time.deltaTime, 0);
-      driveScriptRotate = rotateSpeed;
-    } 
+    }   
 }
 
 
