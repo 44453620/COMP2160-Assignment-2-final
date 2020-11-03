@@ -8,22 +8,9 @@ public class UIManager : MonoBehaviour
 {   
     public static UIManager instance;
 
-    public RectTransform bar;
+    public RectTransform Bar;
     public GameObject Car;
     public GameObject GameOverPanel;
-
-     void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +22,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
        float hp = Car.GetComponent<Health>().getHealth;
-       bar.sizeDelta = new Vector2 ((hp*7), 13);
+       Bar.sizeDelta = new Vector2 ((hp*7), 13);
     }
 
     public void OverPanelOn()

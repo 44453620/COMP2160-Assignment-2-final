@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       UI.GetComponent<UIManager>().OverPanelOff();
-       UI.GetComponent<Timer>().Racing();
+       GameStart();
     }
 
     // Update is called once per frame
@@ -35,5 +34,12 @@ public class GameManager : MonoBehaviour
     {
         UI.GetComponent<UIManager>().OverPanelOn();
         UI.GetComponent<Timer>().RaceOver();
+    }
+
+    public void GameStart()
+    {
+        UI.GetComponent<Timer>().ResetTimer();
+        UI.GetComponent<UIManager>().OverPanelOff();
+        UI.GetComponent<Timer>().Racing();
     }
 }

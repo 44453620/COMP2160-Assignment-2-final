@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
+    public GameObject GameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,6 @@ public class Restart : MonoBehaviour
      public void GameRestart() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.GetComponent<GameManager>().GameStart();
     }
 }
