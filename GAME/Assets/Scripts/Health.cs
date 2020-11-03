@@ -42,7 +42,7 @@ public class Health : MonoBehaviour
         Smokes.SetActive(false);
         Explosion.SetActive(false);
         setHealth(maxHealth);
-        velocity = GameObject.Find("Car").GetComponent<Drive>().speed;
+        velocity = GameObject.Find("Car").GetComponent<Drive>().driveScriptSpeed;
     }
 
     // Update is called once per frame

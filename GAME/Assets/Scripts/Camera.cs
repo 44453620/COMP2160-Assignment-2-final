@@ -17,7 +17,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = GameObject.Find("Car").GetComponent<Drive>().driveSpeed;
+        float speed = GameObject.Find("Car").GetComponent<Drive>().driveScriptSpeed;
 
         Ray ray = new Ray(target.position, Vector3.down);
         RaycastHit hit;
@@ -38,7 +38,7 @@ public class Camera : MonoBehaviour
 
         GetComponent<Camera>().transform.position = transform.TransformPoint(0,1, -2-speed);
 
-        float turning = Input.GetAxis("Horizontal") * Time.deltaTime * GameObject.Find("Car").GetComponent<Drive>().rotateSpeed;
+        float turning = Input.GetAxis("Horizontal") * Time.deltaTime * GameObject.Find("Car").GetComponent<Drive>().driveScriptRotate;
         float savedTime = 0;
 
         if (turning != 0)

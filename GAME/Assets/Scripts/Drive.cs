@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Drive : MonoBehaviour
 {
-    public float driveSpeed;
-    public float rotateSpeed;
+    private float driveSpeed;
+    public float driveScriptSpeed;
+    private float rotateSpeed = 10.0f;
+    public float driveScriptRotate;
     private float acceleration = 100.0f;
     private float brake = 100.0f;
     private float maxSpeed = 15.0f;
@@ -33,17 +35,18 @@ public class Drive : MonoBehaviour
       driveSpeed = Mathf.Clamp(driveSpeed, -maxSpeed, maxSpeed); 
       Vector3 velocity = Vector3.forward * driveSpeed;
       transform.Translate(velocity * Time.deltaTime);  
-      speed = driveSpeed;
+      driveScriptSpeed = driveSpeed;
 
-      if(forward == 0)
-      {
-          turn = 0;
-      }
-      else
+      if(forward != 0)
       {
           turn = Input.GetAxis("Horizontal");
       }
+      else
+      {
+          turn = 0;
+      }
       transform.Rotate (0, turn*rotateSpeed*Time.deltaTime, 0);
+      driveScriptRotate = rotateSpeed;
     } 
 }
 
