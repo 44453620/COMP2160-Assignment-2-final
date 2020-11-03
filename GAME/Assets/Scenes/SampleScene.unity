@@ -322,8 +322,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830cf80f7afd92743accaa2de34443ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  driveSpeed: 0
   driveScriptSpeed: 0
+  rotateSpeed: 100
   driveScriptRotate: 0
+  acceleration: 100
+  brake: 100
+  maxSpeed: 25
+  forward: 0
+  turn: 0
 --- !u!65 &923382651
 BoxCollider:
   m_ObjectHideFlags: 0
