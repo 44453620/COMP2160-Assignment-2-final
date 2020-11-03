@@ -10,7 +10,7 @@ public class Drive : MonoBehaviour
     public float driveScriptRotate;
     private float acceleration = 100.0f;
     private float brake = 100.0f;
-    private float maxSpeed = 15.0f;
+    private float maxSpeed = 25.0f;
     private float forward;
     private float turn;
 
@@ -27,7 +27,10 @@ public class Drive : MonoBehaviour
       }
       else 
       {
+        if(!(Input.GetKeyDown("Vertical")))
+        {
              driveSpeed -= brake * Time.deltaTime;
+        }
       }
       driveSpeed = Mathf.Clamp(driveSpeed, -maxSpeed, maxSpeed); 
       Vector3 velocity = Vector3.forward * driveSpeed;
@@ -37,6 +40,10 @@ public class Drive : MonoBehaviour
       if(forward != 0)
       {
           turn = Input.GetAxis("Horizontal");
+          if(forward < 0)
+          {
+            turn *= -1;
+          }
       }
       else
       {
