@@ -44,7 +44,6 @@ public class Drive : MonoBehaviour
       }
       transform.Rotate (0, turn*rotateSpeed*Time.deltaTime, 0);
       driveScriptRotate = rotateSpeed;
-      Debug.Break();
     } 
 }
 
