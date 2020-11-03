@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     private float minute;
     private float milisecond;
 
+    private bool racing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,23 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (racing)
+        {
         minute =(int)(Time.time/60f);
         second = (int)(Time.time%60f);
         milisecond = (int)(Time.timeSinceLevelLoad * 100f) % 100; 
+        }
+
         timer.text = "Time: " + minute.ToString("00") + ":" + second.ToString("00") + ":" + milisecond.ToString("00");
+    }
+
+    public void Racing()
+    {
+        racing = true;
+    }
+
+    public void RaceOver()
+    {
+        racing = false;
     }
 }
