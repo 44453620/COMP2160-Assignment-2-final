@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
        GameStart();
-       AnalyticsEvent.GameStart();
     }
 
     // Update is called once per frame
@@ -57,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
         {
-            { "Time", UI.GetComponent<Timer>().timer.text},
+            { "Time", UI.GetComponent<Timer>().timer.text.ToString()},
             { "Position", Car.GetComponent<Health>().saveLocation},
             { "Death by", Car.GetComponent<Health>().getOther}
         });
@@ -66,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        AnalyticsEvent.GameStart();
         UI.GetComponent<Timer>().ResetTimer();
         UI.GetComponent<UIManager>().OverPanelOff();
         UI.GetComponent<UIManager>().WinPanelOff();
