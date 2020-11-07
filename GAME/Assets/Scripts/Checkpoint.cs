@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    enum CheckpointState
-    {
-        Available, Passed
-    };
-    CheckpointState checkpointState;
+    Transform car;
+    private int dispChkPoint;
+    //CarCheckpoints objAplha;
+    //bool checkpointReached;
     void Start()
     {
-        
+        car = GameObject.Find("Car").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter (Collider other)
     {
-        
+        if(transform == CarCheckpoints.checkpointA[CarCheckpoints.currentCheckpoint].transform)
+        {
+            if((CarCheckpoints.currentCheckpoint + 1) < (CarCheckpoints.checkpointA.Length))
+            {
+                CarCheckpoints.currentCheckpoint += 1;
+                Debug.Log("Checkpoint number: " + CarCheckpoints.currentCheckpoint);
+            }
+            else
+            {
+                CarCheckpoints.currentCheckpoint = 0;
+            }
+            //Dimmer();
+        }
+        dispChkPoint = CarCheckpoints.currentCheckpoint;
     }
 }

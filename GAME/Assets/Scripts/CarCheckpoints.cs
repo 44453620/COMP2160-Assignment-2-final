@@ -6,7 +6,7 @@ public class CarCheckpoints : MonoBehaviour
 {
     public Transform[] checkpointArray;
     public static Transform[] checkpointA;
-    public static int currentCheckpoint = 0;
+    public static int currentCheckpoint;
 
     void Start()
     {
