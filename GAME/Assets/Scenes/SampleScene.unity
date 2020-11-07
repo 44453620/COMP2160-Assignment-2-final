@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1893786}
   m_Layer: 0
   m_Name: Checkpoint 1
-  m_TagString: Checkpoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,8 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416a83d8a59f024d959ae08c8cbb331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  dispChkPoint: 0
 --- !u!1 &20284478
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +431,7 @@ GameObject:
   - component: {fileID: 151985449}
   m_Layer: 0
   m_Name: Checkpoint 4
-  m_TagString: Checkpoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151985444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.387181, y: -0.85, z: 31.3}
+  m_LocalPosition: {x: -0.4, y: -0.85, z: 31.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 34183519}
@@ -524,8 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416a83d8a59f024d959ae08c8cbb331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  dispChkPoint: 0
 --- !u!1 &170721213
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +537,7 @@ GameObject:
   - component: {fileID: 170721218}
   m_Layer: 0
   m_Name: Checkpoint 5
-  m_TagString: Checkpoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,7 +550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170721213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.387181, y: -0.85, z: 41.8}
+  m_LocalPosition: {x: -0, y: -0.85, z: 41.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 34183519}
@@ -632,8 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416a83d8a59f024d959ae08c8cbb331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  dispChkPoint: 0
 --- !u!1 &218820880
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +643,7 @@ GameObject:
   - component: {fileID: 218820885}
   m_Layer: 0
   m_Name: Checkpoint 3
-  m_TagString: Checkpoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -662,7 +656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218820880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.387181, y: -0.85, z: 22.5}
+  m_LocalPosition: {x: -0.1, y: -0.85, z: 22.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 34183519}
@@ -740,8 +734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416a83d8a59f024d959ae08c8cbb331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  dispChkPoint: 0
 --- !u!1 &306308941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639587103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3, y: 0.18, z: -3.5199125}
+  m_LocalPosition: {x: -2.2003746, y: 0.18, z: -3.5199125}
   m_LocalScale: {x: 0.70851, y: 0.32999194, z: 1.4523}
   m_Children:
   - {fileID: 1691276821}
@@ -1020,8 +1012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830cf80f7afd92743accaa2de34443ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  rotateSpeed: 100
+  driveScriptSpeed: 0
+  driveScriptRotate: 0
 --- !u!54 &639587109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1050,6 +1042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dc58d2dc2e18143b73d80eda5d935f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Smokes: {fileID: 1691276820}
+  Explosion: {fileID: 712282777}
 --- !u!114 &639587111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,7 +1271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647fe160f927ecd4597aeba7548be9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6139,7 +6132,7 @@ GameObject:
   - component: {fileID: 783481485}
   m_Layer: 0
   m_Name: Checkpoint 2
-  m_TagString: Checkpoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6230,8 +6223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416a83d8a59f024d959ae08c8cbb331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  dispChkPoint: 0
 --- !u!1 &852345268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6508,7 +6499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d13b77ef4d11b40ab8a6b40fcaabc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bar: {fileID: 0}
+  bar: {fileID: 382246062}
   Car: {fileID: 639587103}
   GameOverPanel: {fileID: 76137595}
 --- !u!114 &1067452806
