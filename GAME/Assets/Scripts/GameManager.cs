@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     bool gameOver = false;
 
+    public GameObject WinPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
        {
            GameOver();
        }
+
+       WinRace();
     }
 
     void GameOver()
@@ -40,6 +44,16 @@ public class GameManager : MonoBehaviour
     {
         UI.GetComponent<Timer>().ResetTimer();
         UI.GetComponent<UIManager>().OverPanelOff();
+        UI.GetComponent<UIManager>().WinPanelOff();
         UI.GetComponent<Timer>().Racing();
+    }
+
+    void WinRace()
+    {
+        if (WinPoint.GetComponent<Checkpoint>().checkpointReached)
+        {
+            UI.GetComponent<UIManager>().WinPanelOn();
+            UI.GetComponent<Timer>().RaceOver();
+        }
     }
 }
