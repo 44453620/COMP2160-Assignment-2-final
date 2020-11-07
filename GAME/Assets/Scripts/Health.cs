@@ -6,9 +6,8 @@ public class Health : MonoBehaviour
 {   
     public static int maxHealth = 100;
 
-    private GameObject Smokes = GameObject.Find("Smokes");
-    private GameObject Explosion = GameObject.Find("Explosion");
-    private GameObject Car = GameObject.Find("Car");
+    public GameObject Smokes;
+    public GameObject Explosion;
 
     private int health;
     
@@ -78,13 +77,22 @@ public class Health : MonoBehaviour
     {
         if (obstruction.gameObject.tag == "Danger")
         {
-            if (Car.GetComponent<Drive>().getSpeed >= 5)
-                reduceHealth(Mathf.RoundToInt(Car.GetComponent<Drive>().getSpeed * 1.5f));
+            if (this.GetComponent<Drive>().getSpeed >= 5)
+            {
+                reduceHealth(Mathf.RoundToInt(this.GetComponent<Drive>().getSpeed * 1.5f));
+            }
         }
         
         if (obstruction.gameObject.tag == "Checkpoint")
         {
-            gainHealth(25);
+            if (getHealth >= 75)
+            {
+                setHealth(maxHealth);
+            }
+            else
+            {
+                gainHealth(25);
+            }
         }
     }
 }
