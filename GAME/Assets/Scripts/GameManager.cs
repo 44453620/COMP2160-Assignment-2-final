@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    static private GameManager instance;
+    static public GameManager Instance 
+    {
+        get 
+        {
+            if (instance == null)
+            {
+                Debug.LogError("There is no GameManager instance in the scene.");
+            }
+            return instance;
+        }
+    }
+
     public GameObject UI;
 
     bool gameOver = false;

@@ -6,7 +6,18 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {   
-    public static UIManager instance;
+    static private UIManager instance;
+    static public UIManager Instance 
+    {
+        get 
+        {
+            if (instance == null) 
+            {
+                Debug.LogError("There is not UIManager in the scene.");
+            }            
+            return instance;
+        }
+    }
 
     public RectTransform Bar;
     public GameObject Car;
