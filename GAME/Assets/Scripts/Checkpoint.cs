@@ -17,7 +17,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(transform == CarCheckpoints.checkpointA[CarCheckpoints.currentCheckpoint].transform)
         {
-            if((CarCheckpoints.currentCheckpoint + 1) < (CarCheckpoints.checkpointA.Length))
+            if((CarCheckpoints.currentCheckpoint + 1) <= (CarCheckpoints.checkpointA.Length))
             {
                 CarCheckpoints.currentCheckpoint += 1;
                 Debug.Log("Checkpoint number: " + CarCheckpoints.currentCheckpoint);
