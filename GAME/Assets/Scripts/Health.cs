@@ -9,6 +9,17 @@ public class Health : MonoBehaviour
     public GameObject Smokes;
     public GameObject Explosion;
 
+    public Vector3 saveLocation;
+    private Collider other;
+
+    public Collider getOther
+    {
+        get
+        {
+            return other;
+        }
+    }
+
     private int health;
     
     private float lifeTime = 0f;
@@ -55,6 +66,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Smokes.SetActive(false);
+            saveLocation = this.transform.position;
 
             lifeTime += Time.deltaTime;
             Debug.Log(lifeTime);
@@ -80,6 +92,7 @@ public class Health : MonoBehaviour
             if (this.GetComponent<Drive>().getSpeed >= 20 || this.GetComponent<Drive>().getSpeed <= -20)
             {
                 reduceHealth(Mathf.Abs(Mathf.RoundToInt(this.GetComponent<Drive>().getSpeed * 1.2f)));
+                other = obstruction;
             }
         }
         

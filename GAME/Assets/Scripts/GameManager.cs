@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject UI;
+    public GameObject Car;
 
     bool gameOver = false;
 
@@ -53,6 +54,13 @@ public class GameManager : MonoBehaviour
     {
         UI.GetComponent<UIManager>().OverPanelOn();
         UI.GetComponent<Timer>().RaceOver();
+
+        Analytics.CustomEvent("gameOver", new Dictionary<string, object>
+        {
+            { "Time", UI.GetComponent<Timer>().timer.text},
+            { "Position", Car.GetComponent<Health>().saveLocation},
+            { "Death by", Car.GetComponent<Health>().getOther}
+        });
         AnalyticsEvent.GameOver();
     }
 
