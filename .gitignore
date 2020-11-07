@@ -23,3 +23,5 @@ GAME/Packages/packages-lock.json
 GAME/Packages/manifest.json
 GAME/Assets/Scenes/SampleScene.unity.meta
 GAME/Temp/UnityLockfile
+GAME/Library
+GAME/Temp
