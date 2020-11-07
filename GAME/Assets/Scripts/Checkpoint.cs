@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
+    enum CheckpointState
+    {
+        Available, Passed
+    };
+    CheckpointState checkpointState;
     void Start()
     {
         
