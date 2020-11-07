@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         {
             UI.GetComponent<UIManager>().WinPanelOn();
             UI.GetComponent<Timer>().RaceOver();
+            AnalyticsEvent.GameOver();
         }
     }
 }
