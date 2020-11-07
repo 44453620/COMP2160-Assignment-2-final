@@ -14,6 +14,22 @@ public class Drive : MonoBehaviour
     private float forward;
     private float turn;
 
+    public float getSpeed
+    {
+      get
+      {
+        return driveSpeed;
+      }
+    }
+
+    public float getRotateSpeed
+    {
+      get
+      {
+        return rotateSpeed;
+      }
+    }
+
     void Update()
     {
       if(transform.position.y < 2)

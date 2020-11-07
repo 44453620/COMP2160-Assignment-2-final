@@ -77,9 +77,9 @@ public class Health : MonoBehaviour
     {
         if (obstruction.gameObject.tag == "Danger")
         {
-            if (this.GetComponent<Drive>().getSpeed >= 5)
+            if (this.GetComponent<Drive>().getSpeed >= 20 || this.GetComponent<Drive>().getSpeed <= -20)
             {
-                reduceHealth(Mathf.RoundToInt(this.GetComponent<Drive>().getSpeed * 1.5f));
+                reduceHealth(Mathf.Abs(Mathf.RoundToInt(this.GetComponent<Drive>().getSpeed * 1.2f)));
             }
         }
         

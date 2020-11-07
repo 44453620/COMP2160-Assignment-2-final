@@ -7,7 +7,8 @@ public class Checkpoint : MonoBehaviour
     Transform car;
     private int dispChkPoint;
     //CarCheckpoints objAplha;
-    //bool checkpointReached;
+    public bool checkpointReached = false;
+
     void Start()
     {
         car = GameObject.Find("Car").transform;
@@ -20,6 +21,7 @@ public class Checkpoint : MonoBehaviour
             if((CarCheckpoints.currentCheckpoint + 1) <= (CarCheckpoints.checkpointA.Length))
             {
                 CarCheckpoints.currentCheckpoint += 1;
+                checkpointReached = true;
                 Debug.Log("Checkpoint number: " + CarCheckpoints.currentCheckpoint);
             }
             else
