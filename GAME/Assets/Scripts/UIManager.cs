@@ -62,23 +62,23 @@ public class UIManager : MonoBehaviour
     {
         if (Point1.GetComponent<Checkpoint>().checkpointReached)
         {
-            check1.text = check1.name + ": complete";
+            check1.text = check1.name + ": complete at " + Point1.GetComponent<Checkpoint>().getTime;
         }
         if (Point2.GetComponent<Checkpoint>().checkpointReached)
         {
-            check2.text = check2.name + ": complete";
+            check2.text = check2.name + ": complete at " + Point2.GetComponent<Checkpoint>().getTime;
         }
         if (Point3.GetComponent<Checkpoint>().checkpointReached)
         {
-            check3.text = check3.name + ": complete";
+            check3.text = check3.name + ": complete at " + Point3.GetComponent<Checkpoint>().getTime;
         }
         if (Point4.GetComponent<Checkpoint>().checkpointReached)
         {
-            check4.text = check4.name + ": complete";
+            check4.text = check4.name + ": complete at " + Point4.GetComponent<Checkpoint>().getTime;
         }
         if (Point5.GetComponent<Checkpoint>().checkpointReached)
         {
-            check5.text = check5.name + ": complete";
+            check5.text = check5.name + ": complete at " + Point5.GetComponent<Checkpoint>().getTime;
         }
     }
 }

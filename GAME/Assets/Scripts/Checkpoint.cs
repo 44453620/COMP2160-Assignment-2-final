@@ -6,8 +6,20 @@ public class Checkpoint : MonoBehaviour
 {
     Transform car;
     private int dispChkPoint;
+
+    public GameObject UI;
     //CarCheckpoints objAplha;
     public bool checkpointReached = false;
+
+    private string elipseTime = "";
+
+    public string getTime
+    {
+        get
+        {
+            return elipseTime;
+        }
+    }
 
     void Start()
     {
@@ -22,6 +34,7 @@ public class Checkpoint : MonoBehaviour
             {
                 CarCheckpoints.currentCheckpoint += 1;
                 checkpointReached = true;
+                elipseTime = UI.GetComponent<Timer>().timer.text;
                 Debug.Log("Checkpoint number: " + CarCheckpoints.currentCheckpoint);
             }
             else
