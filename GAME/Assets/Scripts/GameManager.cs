@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
        GameStart();
+       AnalyticsEvent.GameStart();
     }
 
     // Update is called once per frame
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
     {
         UI.GetComponent<UIManager>().OverPanelOn();
         UI.GetComponent<Timer>().RaceOver();
+        AnalyticsEvent.GameOver();
     }
 
     public void GameStart()
