@@ -33,6 +33,14 @@ public class Drive : MonoBehaviour
       float turn = Input.GetAxis("Horizontal");
       transform.Rotate (0, turn*rotateSpeed*Time.deltaTime, 0);
     } 
+
+    public float getSpeed
+    {
+      get
+      {
+        return driveSpeed;
+      }
+    }
 }
 
 

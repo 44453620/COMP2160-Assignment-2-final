@@ -5,8 +5,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {   
     public static int maxHealth = 100;
-    public GameObject Smokes;
-    public GameObject Explosion;
+
+    private GameObject Smokes = GameObject.Find("Smokes");
+    private GameObject Explosion = GameObject.Find("Explosion");
+    private GameObject Car = GameObject.Find("Car");
 
     private int health;
     
@@ -76,7 +78,8 @@ public class Health : MonoBehaviour
     {
         if (obstruction.gameObject.tag == "Danger")
         {
-            reduceHealth(25);
+            if (Car.GetComponent<Drive>().getSpeed >= 5)
+                reduceHealth(Mathf.RoundToInt(Car.GetComponent<Drive>().getSpeed * 1.5f));
         }
         
         if (obstruction.gameObject.tag == "Checkpoint")
