@@ -8,7 +8,7 @@ public class Drive : MonoBehaviour
     public float driveScriptSpeed;
     private float rotateSpeed = 100.0f;
     public float driveScriptRotate;
-    private float acceleration = 100.0f;
+    private float acceleration = 50.0f;
     private float brake = 100.0f;
     private float maxSpeed = 25.0f;
     private float forward;
