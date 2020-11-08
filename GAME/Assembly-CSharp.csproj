@@ -247,14 +247,14 @@
  <Reference Include="UnityEditor">
  <HintPath>E:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Analytics.Editor">
+ <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.Editor">
- <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>E:/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -625,11 +625,11 @@
  <Reference Include="Unity.TextMeshPro">
  <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>E:/COMP Classes/COMP2160-Assignment-2-final/GAME/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
